@@ -1,0 +1,127 @@
+name: Bug report
+description: Report something that is not working as expected.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template when something already expected to work is broken,
+        incorrect, confusing, inaccessible, or behaving unexpectedly.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the bug.
+      placeholder: What is going wrong?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: Expected behaviour
+      description: What should have happened?
+      placeholder: I expected...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behaviour
+    attributes:
+      label: Actual behaviour
+      description: What actually happened?
+      placeholder: Instead...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: List the steps needed to reproduce the problem.
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. Enter ...
+        4. See ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-area
+    attributes:
+      label: Affected area
+      description: Which part of the application is affected?
+      options:
+        - Public website
+        - Logged-in administration
+        - Content management
+        - Events
+        - Campaigns / initiatives
+        - Resources
+        - Users / roles / permissions
+        - Forms / enquiries
+        - Privacy / data protection
+        - Accessibility
+        - Performance
+        - Other / not yet clear
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How serious is the problem?
+      options:
+        - Critical - prevents core use
+        - High - major feature broken
+        - Medium - important but workaround exists
+        - Low - minor issue or polish
+        - Not yet assessed
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Where did this happen?
+      placeholder: |
+        Browser:
+        Device:
+        Operating system:
+        Logged in or logged out:
+        URL or page:
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or recordings
+      description: Add screenshots, screen recordings or copied error messages if useful.
+      placeholder: Paste or attach evidence here.
+    validations:
+      required: false
+
+  - type: textarea
+    id: related-issues
+    attributes:
+      label: Related issues
+      description: Link related issues, pull requests or decisions if known.
+      placeholder: |
+        Related to:
+        Possibly caused by:
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Anything else useful for diagnosing the problem.
+    validations:
+      required: false
