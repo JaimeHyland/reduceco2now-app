@@ -1,0 +1,126 @@
+name: Technical task
+description: Implementation work that supports the product but is not itself a user story.
+title: "[Task]: "
+labels: ["technical task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for implementation work that does not make sense as a user story.
+
+        A technical task should still be linked to product value, a user story, a bug, or a technical decision where possible.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Task summary
+      description: Briefly describe the technical work to be done.
+      placeholder: What needs to be implemented, configured, refactored, investigated or cleaned up?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason / value
+      description: Why is this task needed?
+      placeholder: |
+        This is needed because...
+        It supports...
+        It reduces risk by...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: task-type
+    attributes:
+      label: Task type
+      description: What kind of technical work is this?
+      options:
+        - Initial setup
+        - Configuration
+        - Architecture / structure
+        - Refactoring
+        - Testing
+        - Accessibility
+        - Security / privacy
+        - Performance
+        - Documentation
+        - Developer tooling
+        - Deployment / operations
+        - Investigation / spike
+        - Other / not yet clear
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-area
+    attributes:
+      label: Affected area
+      description: Which part of the application is affected?
+      options:
+        - Public website
+        - Logged-in administration
+        - Content management
+        - Events
+        - Campaigns / initiatives
+        - Resources
+        - Users / roles / permissions
+        - Forms / enquiries
+        - Privacy / data protection
+        - Accessibility
+        - Developer experience
+        - Deployment / operations
+        - Other / not yet clear
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: What is included and excluded?
+      placeholder: |
+        Included:
+        - ...
+
+        Not included:
+        - ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: completion-criteria
+    attributes:
+      label: Completion criteria
+      description: What must be true for this task to be considered done?
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-work
+    attributes:
+      label: Related work
+      description: Link related stories, bugs, pull requests or decisions if known.
+      placeholder: |
+        Supports:
+        Depends on:
+        Related to:
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / notes
+      description: Record risks, assumptions, trade-offs or questions.
+      placeholder: |
+        Risks:
+        Assumptions:
+        Open questions:
+    validations:
+      required: false
