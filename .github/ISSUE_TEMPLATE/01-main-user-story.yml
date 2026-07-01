@@ -1,0 +1,109 @@
+name: Main user story
+description: A high-level user story that may be split into smaller child stories.
+title: "[Story]: "
+labels: ["user story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for a substantial user-facing or admin-facing capability.
+
+        A main user story may later be split into child stories or implementation slices.
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User story
+      description: Describe the need from the user's point of view.
+      placeholder: As a [type of user], I want [goal] so that [benefit].
+      value: |
+        As a ...
+        I want ...
+        so that ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Explain the background, problem or opportunity behind this story.
+      placeholder: Why is this story needed? What situation does it address?
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: List the conditions that must be met for this story to be considered complete.
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-area
+    attributes:
+      label: User area
+      description: Which part of the application does this mainly concern?
+      options:
+        - Public website
+        - Logged-in administration
+        - Content management
+        - Events
+        - Campaigns / initiatives
+        - Resources
+        - Users / roles / permissions
+        - Forms / enquiries
+        - Privacy / data protection
+        - Other / not yet clear
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Initial priority
+      description: Initial priority, subject to Product Owner review.
+      options:
+        - Must have
+        - Should have
+        - Could have
+        - Won't have for now
+        - Not yet prioritised
+    validations:
+      required: true
+
+  - type: textarea
+    id: child-stories
+    attributes:
+      label: Possible child stories
+      description: Optional notes about smaller stories or slices that may come out of this story.
+      placeholder: |
+        - ...
+        - ...
+    validations:
+      required: false
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies / related issues
+      description: Link related issues, external decisions, design work or content dependencies if known.
+      placeholder: |
+        Depends on:
+        Related to:
+        External decision needed:
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Anything else useful for understanding this story.
+    validations:
+      required: false
