@@ -1,0 +1,104 @@
+name: Custom issue
+description: Use this when the issue does not fit a user story, technical task or bug report.
+title: "[Issue]: "
+labels: ["triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template only when the other templates do not fit.
+
+        Before submitting, consider whether this would be better as:
+        - a main user story
+        - a child user story
+        - a technical task
+        - a bug report
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Briefly describe the issue, question, proposal or concern.
+      placeholder: What needs attention?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue type
+      description: What kind of issue is this?
+      options:
+        - Question
+        - Proposal
+        - Risk
+        - Decision needed
+        - Research / investigation
+        - Documentation note
+        - Process note
+        - Other / not yet clear
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Explain the background or reason for raising this issue.
+      placeholder: Why is this being raised now?
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-outcome
+    attributes:
+      label: Desired outcome
+      description: What should happen as a result of this issue?
+      placeholder: |
+        The desired outcome is...
+        A useful next step would be...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: affected-area
+    attributes:
+      label: Affected area
+      description: Which area is most affected?
+      options:
+        - Public website
+        - Logged-in administration
+        - Content management
+        - Events
+        - Campaigns / initiatives
+        - Resources
+        - Users / roles / permissions
+        - Forms / enquiries
+        - Privacy / data protection
+        - Accessibility
+        - Developer experience
+        - Deployment / operations
+        - Product / planning
+        - Other / not yet clear
+    validations:
+      required: true
+
+  - type: textarea
+    id: related-work
+    attributes:
+      label: Related work
+      description: Link related issues, discussions, documents, pull requests or decisions if known.
+      placeholder: |
+        Related to:
+        Depends on:
+        External document:
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Anything else useful.
+    validations:
+      required: false
