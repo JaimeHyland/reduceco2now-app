@@ -126,11 +126,171 @@
             </div>
         </div>
     </section>
+    <div id="privacy-notice" class="privacy-notice" hidden>
+        <div
+            class="privacy-notice__dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="privacy-notice-title"
+        >
+            <h2 id="privacy-notice-title">Privacy notice</h2>
 
-    <footer>
-        <div class="container">
-            <p>© 2026 ReduceCO2Now - Together for a Better Planet</p>
+            <p>
+                ReduceCO2Now does not use analytics, advertising cookies or tracking
+                technologies, either to monitor how you use this website or for any other reason. We do not collect 
+                personal information about you, about your computer/smartphone or
+                about your browsing activity. We do not share any personal information
+                whatsoever with any third parties.
+            </p>
+
+            <p>
+                This page may provide links to videos from other platforms. We do not
+                load videos from these platforms automatically. However, if you choose
+                to play a video from a third party, the relevant platform’s own privacy
+                rules may apply.  All videos linked from third parties are clearly marked
+                with the relevant platform name and logo. We do not control the content of such third-party
+                videos, and we are sadly not responsible for their privacy practices.
+            </p>
+
+            <p>
+                All videos that we produce ourselves are hosted on our own servers. 
+                We do not use any third-party video hosting services.
+            </p>
+
+            <p>
+                You can continue without saving anything in your browser by pressing the "Continue without saving" button.
+                If you do so, this notice will appear again the next time you visit.
+                If you choose "Remember this choice", we will store a very simple first-party 
+                cookie in your browser. All it does is records that this privacy notice has been shown on your browser.
+                It does not identify you, your computer or smartphone, or your browsing activity. 
+                It is not used for analytics, and is not shared with any third party.
+                If you choose to remember this choice, this notice will not appear again for 180 days.
+            </p>
+
+
+            <div class="privacy-notice__actions">
+            <button id="privacy-notice-close" type="button">
+                Continue without saving
+            </button>
+
+            <button id="privacy-notice-remember" type="button">
+                Remember this choice
+            </button>
+            </div>
         </div>
-    </footer>
+    </div>
+
+    <script>
+        (function () {
+            const cookieName = "reduceco2now_privacy_notice_seen";
+            const cookieLifetimeInDays = 180;
+            const cookieMaxAgeInSeconds = 60 * 60 * 24 * cookieLifetimeInDays;
+
+            function hasActiveNoticeCookie() {
+                return document.cookie
+                    .split("; ")
+                    .some((cookie) => cookie.startsWith(cookieName + "="));
+            }
+
+            function setNoticeSeenCookie() {
+                document.cookie = [
+                    cookieName + "=true",
+                    "Max-Age=" + cookieMaxAgeInSeconds,
+                    "Path=/",
+                    "SameSite=Lax"
+                ].join("; ");
+            }
+
+            const notice = document.getElementById("privacy-notice");
+            const closeButton = document.getElementById("privacy-notice-close");
+            const rememberButton = document.getElementById("privacy-notice-remember");
+
+            if (!notice || !closeButton || !rememberButton) {
+                return;
+            }
+
+            if (!hasActiveNoticeCookie()) {
+                notice.hidden = false;
+            }
+
+            closeButton.addEventListener("click", function () {
+                notice.hidden = true;
+            });
+
+            rememberButton.addEventListener("click", function () {
+                setNoticeSeenCookie();
+                notice.hidden = true;
+            });
+        })();
+    </script>
+
+<footer>
+    <div class="container">
+        <p>© 2026 ReduceCO2Now - Together for a Better Planet</p>
+
+        <p class="footer-links">
+            <a href="legal-notice.html">Legal notice</a>
+            <span aria-hidden="true"> | </span>
+            <a href="privacy-policy.html">Privacy policy</a>
+        </p>
+    </div>
+</footer>
+
+    <div id="legal-notice-modal" class="info-modal" hidden>
+        <div
+            class="info-modal__dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="legal-notice-title"
+        >
+            <h2 id="legal-notice-title">Legal notice</h2>
+
+            <p>
+                This legal notice provides provider information for this website.
+                The information below is currently placeholder text for the development
+                prototype and must be replaced before publication.
+            </p>
+
+            <p>
+                <strong>Website provider:</strong><br>
+                ReduceCO2Now<br>
+                Legal name / organisation type to be added<br>
+                Postal address to be added
+            </p>
+gi
+            <p>
+                <strong>Represented by:</strong><br>
+                Name of legally responsible person or persons to be added
+            </p>
+
+            <p>
+                <strong>Contact:</strong><br>
+                Email address to be added<br>
+                Telephone number or alternative fast contact route to be added, if required
+            </p>
+
+            <p>
+                <strong>Register information:</strong><br>
+                Register court / register number to be added, if applicable
+            </p>
+
+            <p>
+                <strong>VAT identification number:</strong><br>
+                VAT ID to be added, if applicable
+            </p>
+
+            <p>
+                <strong>Responsible for editorial content:</strong><br>
+                Name and address to be added, if required
+            </p>
+
+            <div class="info-modal__actions">
+                <button id="legal-notice-close" type="button">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+    
 </body>
 </html>
