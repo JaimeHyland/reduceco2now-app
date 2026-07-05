@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_headers",
+  "info": {
+    "displayName": "Header"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "learNmore": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

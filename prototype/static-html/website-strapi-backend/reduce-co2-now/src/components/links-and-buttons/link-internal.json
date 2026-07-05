@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_links_and_buttons_link_internals",
+  "info": {
+    "displayName": "Link internal"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "to": {
+      "type": "string",
+      "required": true
+    },
+    "class": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
