@@ -1,4 +1,4 @@
-﻿# ReduceCO2Now App
+﻿# The ReduceCO2Now Website
 
 This repository contains the code and technical documentation for the ReduceCO2Now web application.
 
