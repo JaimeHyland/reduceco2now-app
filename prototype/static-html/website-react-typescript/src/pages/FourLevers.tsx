@@ -1,9 +1,17 @@
+import { useQuery } from "@tanstack/react-query"
 import { Header } from "../components/Header"
+import { fetchComponent } from "../services/services"
+import { Loader } from "../components/Loader";
 
 export const FourLevers = () => {
+    const {data, isLoading} = useQuery({
+        queryKey: ["levers-header"],
+        queryFn: async() => fetchComponent("static-headers/a7rsu2wo8pvuooc8oirhhiyo")
+    });
+
     return (
         <>
-            <Header title="THE FOUR GLOBAL LEVERS" subtitle="The challenge is large, but the number of fundamental levers is surprisingly small." />
+            {isLoading? <Loader>Loading header...</Loader> : <Header title={data.title} subtitle={data.subtitle} />}
 
             <section className="section">
                 <div className="container">

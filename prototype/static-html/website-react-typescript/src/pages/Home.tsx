@@ -1,13 +1,20 @@
+import { useQuery } from "@tanstack/react-query"
 import { AboutUs } from "../components/AboutUs"
 import { FocusAreas } from "../components/FocusAreas"
 import { Header } from "../components/Header"
 import { Vision } from "../components/Vision"
 import { WhatWeDo } from "../components/WhatWeDo"
+import { fetchComponent } from "../services/services"
+import { Loader } from "../components/Loader"
 
 export const Home = () => {
+    const {data, isLoading} = useQuery({
+        queryKey: ['home-header'],
+        queryFn: async() => fetchComponent("static-headers/hvofye4twqau617utub2y67t")
+    })
     return (
         <>
-        <Header title="Together for a Better Planet" subtitle="Building a healthier, more sustainable future for generations to come" learnMore="/concecuences" />
+        {isLoading? <Loader>Loading header...</Loader> : <Header title={data.title} subtitle={data.subtitle} learnMore={data.learnMore.path} />}
         <AboutUs />
         <WhatWeDo />
         <FocusAreas />

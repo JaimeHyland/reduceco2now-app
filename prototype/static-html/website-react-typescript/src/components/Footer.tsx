@@ -1,23 +1,17 @@
 import { Link } from "react-router-dom"
-import axios from "axios"
 import { useQuery } from "@tanstack/react-query";
+import { fetchComponent } from "../services/services";
 
-const API:string = import.meta.env.VITE_API_BASE as string;
 
-const fetchComponent = async() => {
-    const res = await axios.get(`${API}/footer`, {
-        params: {
-            populate: '*'
-        }
-    });
-    return res.data.data;
-}
+
 
 export const Footer = () => {
 
     const {data, isLoading} = useQuery({
         queryKey: ['footer'],
-        queryFn: fetchComponent
+        queryFn: async () => {
+            return await fetchComponent("footer");
+        }
     });
 
     if(isLoading) {

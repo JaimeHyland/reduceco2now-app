@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "static_headers",
+  "info": {
+    "singularName": "static-header",
+    "pluralName": "static-headers",
+    "displayName": "Static-header"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "learnMore": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "links-and-buttons.learn-more",
+      "repeatable": false
+    }
+  }
+}
