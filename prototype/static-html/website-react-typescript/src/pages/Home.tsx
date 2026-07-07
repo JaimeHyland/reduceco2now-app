@@ -14,7 +14,7 @@ export const Home = () => {
     })
     return (
         <>
-        {isLoading? <Loader>Loading header...</Loader> : <Header title={data.title} subtitle={data.subtitle} learnMore={data.learnMore.path} />}
+        {isLoading? <Loader>Loading header...</Loader> : <Header title={data.title} subtitle={data.subtitle} button={data.button} />}
         <AboutUs />
         <WhatWeDo />
         <FocusAreas />

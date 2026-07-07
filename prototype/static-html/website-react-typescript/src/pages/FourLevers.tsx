@@ -11,7 +11,7 @@ export const FourLevers = () => {
 
     return (
         <>
-            {isLoading? <Loader>Loading header...</Loader> : <Header title={data.title} subtitle={data.subtitle} />}
+            {isLoading? <Loader>Loading header...</Loader> : <Header button={data.button} title={data.title} subtitle={data.subtitle} />}
 
             <section className="section">
                 <div className="container">
