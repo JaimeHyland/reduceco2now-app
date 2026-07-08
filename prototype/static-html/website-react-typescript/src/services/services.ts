@@ -1,6 +1,7 @@
 import axios from "axios"
 
-const API:string = import.meta.env.VITE_API_BASE as string;
+export const API:string = import.meta.env.VITE_API_BASE+"/api" as string;
+export const SERVER:string = import.meta.env.VITE_API_BASE as string;
 
 export const fetchComponent = async(path:string) => {
     const res = await axios.get(`${API}/${path}`, {

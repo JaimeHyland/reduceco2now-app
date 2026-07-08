@@ -1,20 +1,17 @@
 {
-  "collectionName": "components_sections_headers",
+  "collectionName": "components_links_and_buttons_learn_mores",
   "info": {
-    "displayName": "Header"
+    "displayName": "learn-more"
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "text": {
       "type": "string",
       "required": true
     },
-    "subtitle": {
+    "path": {
       "type": "string",
       "required": true
-    },
-    "learNmore": {
-      "type": "string"
     }
   },
   "config": {}

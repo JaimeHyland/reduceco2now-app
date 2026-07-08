@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface LinksAndButtonsLearnMore extends Struct.ComponentSchema {
+  collectionName: 'components_links_and_buttons_learn_mores';
+  info: {
+    displayName: 'learn-more';
+  };
+  attributes: {
+    path: Schema.Attribute.String & Schema.Attribute.Required;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface LinksAndButtonsLinkInternal extends Struct.ComponentSchema {
   collectionName: 'components_links_and_buttons_link_internals';
   info: {
@@ -12,23 +23,11 @@ export interface LinksAndButtonsLinkInternal extends Struct.ComponentSchema {
   };
 }
 
-export interface SectionsHeader extends Struct.ComponentSchema {
-  collectionName: 'components_sections_headers';
-  info: {
-    displayName: 'Header';
-  };
-  attributes: {
-    learNmore: Schema.Attribute.String;
-    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'links-and-buttons.learn-more': LinksAndButtonsLearnMore;
       'links-and-buttons.link-internal': LinksAndButtonsLinkInternal;
-      'sections.header': SectionsHeader;
     }
   }
 }
