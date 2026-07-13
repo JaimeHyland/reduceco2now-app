@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_links_and_buttons_learn_mores",
+  "info": {
+    "displayName": "learn-more"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "path": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}
