@@ -1,13 +1,11 @@
 
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import NavBar from './components/NavBar'
-import { Home } from './pages/Home'
 import { Footer } from './components/Footer'
-import { FourLevers } from './pages/FourLevers'
-import { Concecuences } from './pages/Concecuences'
-import { NewsPage } from './pages/News'
-import { SingleNew } from './pages/SingleNew'
+import { EngRoutes } from './locale/english/EngRoutes'
+import { SpaRoutes } from './locale/spanish/SpaRoutes'
+
 
 function App() {
   
@@ -16,11 +14,9 @@ function App() {
     <main>
       <NavBar />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/levers' element={<FourLevers />} />
-        <Route path='/consecuences' element={<Concecuences />} />
-        <Route path='/news' element={<NewsPage />} />
-        <Route path='/news/:id' element={<SingleNew />} />
+        <Route path='/' element={<Navigate to="/en" replace />} />
+        <Route path='/en/*' element={<EngRoutes />} />
+        <Route path='/es/*' element={<SpaRoutes />} />
       </Routes>
       <Footer />
     </main>

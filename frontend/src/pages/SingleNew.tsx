@@ -5,11 +5,16 @@ import { Loader } from "../components/Loader";
 import { HeaderNews } from "../components/HeaderNews";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
-export const SingleNew = () => {
+type Props = {
+    locale:string
+}
+
+
+export const SingleNew = ({locale}:Props) => {
     const {id} = useParams();
     const {data, isLoading} = useQuery({
         queryKey: ['single-news'],
-        queryFn: async () => fetchComponent(`news-posts/${id}`)
+        queryFn: async () => fetchComponent(`news-posts/${id}`, locale)
     });
 
     if(isLoading) {

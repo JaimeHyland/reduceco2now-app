@@ -18,16 +18,20 @@ type NewsPost = {
   };
 };
 
-export const NewsPage = () => {
+type Props = {
+    locale:string
+}
+
+export const NewsPage = ({locale}:Props) => {
     const results = useQueries({
         queries: [
             {
                 queryKey: ['newsHeader'],
-                queryFn: async () => fetchComponent("static-headers/i9m7iopumkq4zg5odxo99xbi")
+                queryFn: async () => fetchComponent("static-headers/i9m7iopumkq4zg5odxo99xbi", locale)
             },
             {
                 queryKey: ['newsPosts'],
-                queryFn: async () => fetchComponent("news-posts")
+                queryFn: async () => fetchComponent("news-posts", locale)
             }
         ]
     })

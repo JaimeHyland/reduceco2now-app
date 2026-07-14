@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_links_and_buttons_news",
+  "info": {
+    "displayName": "News"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

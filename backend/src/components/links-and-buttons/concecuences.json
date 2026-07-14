@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_links_and_buttons_concecuences",
+  "info": {
+    "displayName": "Concecuences"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

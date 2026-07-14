@@ -3,10 +3,14 @@ import { fetchComponent } from "../services/services"
 import { Loader } from "./Loader"
 import { BlocksRenderer } from "@strapi/blocks-react-renderer"
 
-export const Vision = () => {
+type Props = {
+    locale:string
+}
+
+export const Vision = ({locale}:Props) => {
     const {data, isLoading} = useQuery({
         queryKey: ["visiton"],
-        queryFn: async () => fetchComponent("vision")
+        queryFn: async () => fetchComponent("vision", locale)
     })
     if(isLoading){
         return <Loader>Loading section...</Loader>

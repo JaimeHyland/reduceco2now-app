@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_links_and_buttons_levers",
+  "info": {
+    "displayName": "Levers"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -3,10 +3,14 @@ import { Header } from "../components/Header"
 import { fetchComponent } from "../services/services"
 import { Loader } from "../components/Loader";
 
-export const FourLevers = () => {
+type Props = {
+    locale:string
+}
+
+export const FourLevers = ({locale}:Props) => {
     const {data, isLoading} = useQuery({
         queryKey: ["levers-header"],
-        queryFn: async() => fetchComponent("static-headers/a7rsu2wo8pvuooc8oirhhiyo")
+        queryFn: async() => fetchComponent("static-headers/a7rsu2wo8pvuooc8oirhhiyo", locale)
     });
 
     return (
