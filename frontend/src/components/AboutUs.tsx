@@ -2,10 +2,14 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchComponent } from "../services/services";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 
-export const AboutUs = () => {
+type Props = {
+    locale:string
+}
+
+export const AboutUs = ({locale}:Props) => {
     const {data, isLoading} = useQuery({
         queryKey: ["aboutyus"],
-        queryFn: async () => await fetchComponent("about-us")
+        queryFn: async () => await fetchComponent("about-us", locale)
     });
     if(isLoading){
         return <p>Loading section...</p>

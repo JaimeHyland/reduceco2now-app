@@ -1,0 +1,59 @@
+{
+  "kind": "singleType",
+  "collectionName": "nav_bars",
+  "info": {
+    "singularName": "nav-bar",
+    "pluralName": "nav-bars",
+    "displayName": "NavBar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "Home": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "links-and-buttons.nav-option",
+      "repeatable": false
+    },
+    "Levers": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "links-and-buttons.levers",
+      "repeatable": false
+    },
+    "Concecuences": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "links-and-buttons.concecuences",
+      "repeatable": false
+    },
+    "News": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "links-and-buttons.news",
+      "repeatable": false
+    }
+  }
+}

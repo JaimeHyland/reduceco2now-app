@@ -70,26 +70,7 @@ body {
     position: relative;
 }
 
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #34d399, #22d3ee);
-    transition: width 0.3s ease;
-}
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #34d399;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-    width: 100%;
-}
 
 .hero {
     background: linear-gradient(135deg, rgba(5, 5, 5, 0.92) 0%, rgba(15, 23, 42, 0.9) 50%, rgba(2, 44, 34, 0.92) 100%), 

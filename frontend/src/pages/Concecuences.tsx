@@ -3,10 +3,14 @@ import { Header } from "../components/Header"
 import { fetchComponent } from "../services/services"
 import { Loader } from "../components/Loader";
 
-export const Concecuences = () => {
+type Props = {
+    locale:string
+}
+
+export const Concecuences = ({locale}:Props) => {
     const {data, isLoading} = useQuery({
         queryKey: ["consecuences-header"],
-        queryFn: async() => fetchComponent("static-headers/gom24u4p9b70ukym4h9yct6m")
+        queryFn: async() => fetchComponent("static-headers/gom24u4p9b70ukym4h9yct6m", locale)
     });
     return(
         <>

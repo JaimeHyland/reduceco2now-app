@@ -552,6 +552,64 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNavBarNavBar extends Struct.SingleTypeSchema {
+  collectionName: 'nav_bars';
+  info: {
+    displayName: 'NavBar';
+    pluralName: 'nav-bars';
+    singularName: 'nav-bar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    Concecuences: Schema.Attribute.Component<
+      'links-and-buttons.concecuences',
+      false
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Home: Schema.Attribute.Component<'links-and-buttons.nav-option', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    Levers: Schema.Attribute.Component<'links-and-buttons.levers', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::nav-bar.nav-bar'
+    >;
+    News: Schema.Attribute.Component<'links-and-buttons.news', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiNewsPostNewsPost extends Struct.CollectionTypeSchema {
   collectionName: 'news_posts';
   info: {
@@ -1214,6 +1272,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us.about-us': ApiAboutUsAboutUs;
       'api::footer.footer': ApiFooterFooter;
+      'api::nav-bar.nav-bar': ApiNavBarNavBar;
       'api::news-post.news-post': ApiNewsPostNewsPost;
       'api::static-header.static-header': ApiStaticHeaderStaticHeader;
       'api::vision.vision': ApiVisionVision;
