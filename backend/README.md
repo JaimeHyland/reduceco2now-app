@@ -32,13 +32,9 @@ cp .env.example .env
 
  Make sure the values match your local setup.
 
-### 3. Set up the SQLite database
-You will need a copy of the current SQLite database used by the team.
-Since this is a prototype, the database is not generated automatically.
+### 3. Set up the Postgresql database
 
-👉 Contact the team through the Discord channel to obtain the correct .sqlite file.
-
-Place it in the project directory exactly where the backend expects it.
+Request in the discord group the information to connect the database
 
 ### 4. Run the development server
 
@@ -52,11 +48,10 @@ If everything is configured correctly, the backend should start without issues.
 ### ⚠️ Common Issue: 403 Forbidden from the Frontend
 If the frontend returns a 403 Forbidden error, it usually means:
 
-The backend was launched without a valid SQLite database, or
+The backend was launched without a valid database, or
 
 The database was not initialized correctly.
 
-Double‑check that your .sqlite file is present and accessible.
 
 ---
 
