@@ -10,7 +10,7 @@ type Props = {
 export const Concecuences = ({locale}:Props) => {
     const {data, isLoading} = useQuery({
         queryKey: ["consecuences-header"],
-        queryFn: async() => fetchComponent("static-headers/gom24u4p9b70ukym4h9yct6m", locale)
+        queryFn: async() => fetchComponent("static-headers/rvsjrz6ifald77cp7ke5oe5w", locale)
     });
     return(
         <>

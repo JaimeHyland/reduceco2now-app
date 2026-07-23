@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { API } from "../services/services";
 import { NavBarOption } from "./NavBarOptions";
+import type { Language } from "../services/util";
 
 
 const NavBar = () => {
@@ -36,7 +37,7 @@ const NavBar = () => {
                 {!languageList.isLoading && (
                     <select onChange={({target}) => handleChange(target.value)} defaultValue={location.pathname.split("/")[1]}>
                         {
-                            languageList.data.map((language) => {
+                            languageList.data.map((language:Language) => {
                                 return (
                                     <option key={language.id} value={language.code}>{language.name}</option>
                                 )

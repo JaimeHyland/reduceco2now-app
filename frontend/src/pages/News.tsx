@@ -27,7 +27,7 @@ export const NewsPage = ({locale}:Props) => {
         queries: [
             {
                 queryKey: ['newsHeader'],
-                queryFn: async () => fetchComponent("static-headers/i9m7iopumkq4zg5odxo99xbi", locale)
+                queryFn: async () => fetchComponent("static-headers/wlg6z3h90iwuwgbs42i12b72", locale)
             },
             {
                 queryKey: ['newsPosts'],

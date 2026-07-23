@@ -2,42 +2,21 @@ import { useQuery } from "@tanstack/react-query"
 import { Header } from "../components/Header"
 import { fetchComponent } from "../services/services"
 import { Loader } from "../components/Loader";
+import { SystemView } from "../components/SystemView";
+import type { ComponentProp } from "../services/util";
 
-type Props = {
-    locale:string
-}
 
-export const FourLevers = ({locale}:Props) => {
+
+export const FourLevers = ({locale}:ComponentProp) => {
     const {data, isLoading} = useQuery({
         queryKey: ["levers-header"],
-        queryFn: async() => fetchComponent("static-headers/a7rsu2wo8pvuooc8oirhhiyo", locale)
+        queryFn: async() => fetchComponent("static-headers/rctglwfx8cyxprbnzhd07374", locale)
     });
 
     return (
         <>
             {isLoading? <Loader>Loading header...</Loader> : <Header button={data.button} title={data.title} subtitle={data.subtitle} />}
-
-            <section className="section">
-                <div className="container">
-                    <h2>A Systems View</h2>
-                    <div className="systems-box">
-                        <p>Atmospheric CO₂ rises because: <strong>Emissions {">"} Removal</strong></p>
-                        <p>Therefore only two fundamental levers exist:</p>
-                        <div className="two-levers">
-                            <div className="lever-simple">
-                                <span className="icon">↓</span>
-                                Reduce carbon entering the atmosphere
-                            </div>
-                            <div className="lever-simple">
-                                <span className="icon">↑</span>
-                                Increase carbon removed from the atmosphere
-                            </div>
-                        </div>
-                        <p className="center-text">Every serious climate action must affect one of these two flows.</p>
-                    </div>
-                </div>
-            </section>
-
+            <SystemView locale={locale} />
             <section className="section dark">
                 <div className="container">
                     <div className="lever-card">

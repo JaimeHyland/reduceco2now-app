@@ -6,7 +6,6 @@ import { Vision } from "../components/Vision"
 import { WhatWeDo } from "../components/WhatWeDo"
 import { fetchComponent } from "../services/services"
 import { Loader } from "../components/Loader"
-import { useLocation } from "react-router-dom"
 
 type Props = {
     locale:string
@@ -15,16 +14,15 @@ type Props = {
 export const Home = ({locale}:Props) => {
     const {data, isLoading} = useQuery({
         queryKey: ['home-header'],
-        queryFn: async() => fetchComponent("static-headers/hvofye4twqau617utub2y67t", locale)
+        queryFn: async() => fetchComponent("static-headers/a8ipeah0z8qacucwnkoa2l4d", locale)
     })
-    const location = useLocation();
     return (
         <>
         {isLoading? <Loader>Loading header...</Loader> : <Header title={data.title} subtitle={data.subtitle} button={data.button} />}
-        <AboutUs locale={location.pathname.split("/")[1]} />
-        <WhatWeDo />
-        <FocusAreas />
-        <Vision locale={location.pathname.split("/")[1]} />
+        <AboutUs locale={locale} />
+        <WhatWeDo locale={locale} />
+        <FocusAreas locale={locale} />
+        <Vision locale={locale} />
         </>
     )
 }
