@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_block_content_blocks",
+  "info": {
+    "displayName": "block"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text",
+      "required": false
+    },
+    "content": {
+      "type": "blocks",
+      "required": true
+    },
+    "goal": {
+      "type": "string"
+    },
+    "leverStatus": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

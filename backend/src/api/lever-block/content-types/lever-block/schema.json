@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lever_blocks",
+  "info": {
+    "singularName": "lever-block",
+    "pluralName": "lever-blocks",
+    "displayName": "lever-block"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "leverNumber": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "block": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "block-content.block",
+      "repeatable": true
+    }
+  }
+}

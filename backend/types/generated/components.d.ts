@@ -1,5 +1,30 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlockContentBlock extends Struct.ComponentSchema {
+  collectionName: 'components_block_content_blocks';
+  info: {
+    displayName: 'block';
+  };
+  attributes: {
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    goal: Schema.Attribute.String;
+    leverStatus: Schema.Attribute.String;
+    subtitle: Schema.Attribute.Text;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface CardContentCard extends Struct.ComponentSchema {
+  collectionName: 'components_card_content_cards';
+  info: {
+    displayName: 'card';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LinksAndButtonsConcecuences extends Struct.ComponentSchema {
   collectionName: 'components_links_and_buttons_concecuences';
   info: {
@@ -66,6 +91,8 @@ export interface LinksAndButtonsNews extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'block-content.block': BlockContentBlock;
+      'card-content.card': CardContentCard;
       'links-and-buttons.concecuences': LinksAndButtonsConcecuences;
       'links-and-buttons.learn-more': LinksAndButtonsLearnMore;
       'links-and-buttons.levers': LinksAndButtonsLevers;

@@ -1,12 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchComponent } from "../services/services";
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import type { ComponentProp } from "../services/util";
 
-type Props = {
-    locale:string
-}
 
-export const AboutUs = ({locale}:Props) => {
+export const AboutUs = ({locale}:ComponentProp) => {
     const {data, isLoading} = useQuery({
         queryKey: ["aboutyus"],
         queryFn: async () => await fetchComponent("about-us", locale)

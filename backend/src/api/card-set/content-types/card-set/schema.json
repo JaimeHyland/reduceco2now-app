@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "card_sets",
+  "info": {
+    "singularName": "card-set",
+    "pluralName": "card-sets",
+    "displayName": "card-set"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "subtitle": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "cards": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "card-content.card",
+      "repeatable": true
+    }
+  }
+}

@@ -1,0 +1,10 @@
+Systems view
+{
+    "systems_view": "",
+    "atmospheric_co2_rises_because": "",
+    "reason_of_increment": "",
+    "two_fundamental_levers": "",
+    "lever1": "",
+    "lever2": "",
+    "conclusion": ""
+}

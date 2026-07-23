@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query";
 import { fetchComponent } from "../services/services";
+import type { ComponentProp } from "../services/util";
 
 
 
 
-export const Footer = () => {
+export const Footer = ({locale}:ComponentProp) => {
 
     const {data, isLoading} = useQuery({
         queryKey: ['footer'],
         queryFn: async () => {
-            return await fetchComponent("footer");
+            return await fetchComponent("footer", locale);
         }
     });
 
