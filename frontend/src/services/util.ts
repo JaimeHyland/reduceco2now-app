@@ -1,3 +1,4 @@
+const SUPORTEDLOCALES = ["es", "en", "fr", "it", "de"] as const;
 export type ComponentProp = {
     locale: "en" | "es"
 }
